@@ -21,6 +21,7 @@ algum quadrado troque sua cor para uma cor aleatória gerada pela função abaix
 
 3º exercício
 A partir do seguinte vetor:
+
 var nomes = ["Diego", "Gabriel", "Lucas"];
 Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
     ● Diego
