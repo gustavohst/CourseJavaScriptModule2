@@ -1,23 +1,23 @@
 var divElement = document.getElementById('div');
 var buttonElement = document.querySelector('button#buttonSquare');
-var ulElement = document.querySelector('div ul');
 
 buttonElement.onclick = function () {
-    var newSquareElement = document.createElement('div');
+    let newSquareElement = document.createElement('div');
     newSquareElement.style.width = '100px';
     newSquareElement.style.height = '100px';
     newSquareElement.style.backgroundColor = 'red';
-    newSquareElement.style.border = 'thin solid white';
-    newSquareElement.addEventListener('mouseover', function () {
+    newSquareElement.style.border = '1px solid white';
+    newSquareElement.style.float = 'left';
+    newSquareElement.onmouseover = function () {
         newSquareElement.style.backgroundColor = getRandomColor();
-    });
+    };
     divElement.appendChild(newSquareElement);
 }
 
 function getRandomColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
@@ -26,23 +26,17 @@ function getRandomColor() {
 var nomes = ["Diego", "Gabriel", "Lucas"];
 
 function createLi() {
+    let newUlElement = document.createElement('ul');
+    divElement.appendChild(newUlElement);
+
     nomes.forEach(element => {
-        var newLiElement = document.createElement('li');
+        let newLiElement = document.createElement('li');
         newLiElement.textContent = element;
-        ulElement.appendChild(newLiElement);
+        divElement.appendChild(newLiElement);
     });
 }
 createLi(nomes);
 
-/* Study why this dont work
-ulElement.onloadeddata = function(){
-    nomes.forEach(element => {
-        var newLiElement = document.createElement('li');
-        newLiElement.textContent = element;
-        ulElement.appendChild(newLiElement);
-    });
-}
-*/
 
 
 
