@@ -32,11 +32,18 @@ function createLi() {
     nomes.forEach(element => {
         let newLiElement = document.createElement('li');
         newLiElement.textContent = element;
-        divElement.appendChild(newLiElement);
+        newUlElement.appendChild(newLiElement);
     });
 }
 createLi(nomes);
 
 
-
+function adicionar(){
+    let newElementUl = document.createElement('li');
+    let ulElement = document.querySelector('ul');
+    let inputElement = document.querySelector('input').value;
+    newElementUl.textContent = inputElement;
+    ulElement.appendChild(newElementUl);
+    document.querySelector('input').value='';
+}
 
